@@ -429,10 +429,10 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 except:
                     pass
                 #
-                msg = f"\nDownloading File: `{downloading_dir_name}`"
-                msg += f"\nSpeed: {file.download_speed_string()} 🔽 / {file.upload_speed_string()} 🔼"
-                msg += f"\nProgress: {file.progress_string()}"
-                msg += f"\nTotal Size: {file.total_length_string()}"
+                msg = f"\n📂 **Name**: `{downloading_dir_name}`"
+                msg += f"\n**Size**: {file.total_length_string()}"
+                msg += f"\n**Progress**: {file.progress_string()}"
+                msg += f"\n**Speed**: {file.download_speed_string()} / {file.upload_speed_string()}"
 
                 if is_file is None :
                    msg += f"\n<b>Connections:</b> {file.connections}"
