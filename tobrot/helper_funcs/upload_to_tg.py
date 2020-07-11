@@ -202,17 +202,17 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         gjay = size(getFolderSize(file_upload))
         print(gjay)
         button = []
-        button.append([pyrogram.InlineKeyboardButton(text="☁️ CloudUrl ☁️", url=f"{gau_link}")])
+        button.append([pyrogram.InlineKeyboardButton(text="🔐 𝙶𝙳𝚛𝚒𝚟𝚎 𝙻𝚒𝚗𝚔", url=f"{gau_link}")])
         if INDEX_LINK:
             indexurl = f"{INDEX_LINK}/{file_upload}/"
             tam_link = requests.utils.requote_uri(indexurl)
             print(tam_link)
-            button.append([pyrogram.InlineKeyboardButton(text="ℹ️ IndexUrl ℹ️", url=f"{tam_link}")])
+            button.append([pyrogram.InlineKeyboardButton(text="📥 𝙸𝚗𝚍𝚎𝚡 𝙻𝚒𝚗𝚔", url=f"{tam_link}")])
         button_markup = pyrogram.InlineKeyboardMarkup(button)
         await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
-        await messa_ge.reply_text(f"🤖: Folder has been Uploaded successfully to {tt} in your Cloud <a href='tg://user?id={g_id}'>🤒</a>\n📀 Size: {gjay}", reply_markup=button_markup)
+        await messa_ge.reply_text(f"📂 Name: Folder \n\n✅Uploaded successfully</a>\n\n💾 File Size: {gjay}", reply_markup=button_markup)
         #await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
-        #await messa_ge.reply_text(f"""🤖: Folder has been Uploaded successfully to {tt} in your cloud 🤒\n\n☁️ Cloud URL:  <a href="{gau_link}">FolderLink</a>\nℹ️ Index Url:. <a href="{tam_link}">IndexLink</a>""")
+        #await messa_ge.reply_text(f"""📂 Name: Folder has been Uploaded successfully to {tt} in your cloud 🤒\n\n☁️ Cloud URL:  <a href="{gau_link}">FolderLink</a>\nℹ️ Index Url:. <a href="{tam_link}">IndexLink</a>""")
         shutil.rmtree(file_upload)
         await del_it.delete()
 
